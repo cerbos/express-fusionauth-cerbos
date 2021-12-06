@@ -114,90 +114,11 @@ if (!allowed.isAuthorized(contact.id, "read")) {
   return res.status(403).json({ error: "Unauthorized" });
 }
 ```
+Implementation at this stage will be dependant on your business requirements.
 
-1. Serve the response if authorized
-
-## Example Requests
-
-Once a JWT token has been generated requests can be made to the express server.
-
-### List contacts
-
-Allowed for `user` and `admin` roles
-
-```bash
-curl -X GET 'http://localhost:8080/contacts' \
---header 'Authorization: Bearer <token here>'
-```
-
-### Get a contact
-
-Allowed for `user` and `admin` roles
-
-```bash
-curl -X GET 'http://localhost:8080/contacts/abc123' \
---header 'Authorization: Bearer <token here>'
-```
-
-### Create a contact
-
-Allowed for `admin` role only
-
-```bash
-curl -X POST 'http://localhost:8080/contacts/new' \
---header 'Authorization: Bearer <token here>'
-```
-
-Should this request be made with the JWT roles set to `["admin"]` the response will be"
-
-```json
-{ "result": "Created contact" }
-```
-
-Should this request be made with the JWT roles set to `["user"]` the response will be:
-
-```json
-{ "error": "Unauthorized" }
-```
-
-### Update a contact
-
-Allowed for `admin` role only
-
-```bash
-curl -X PATCH 'http://localhost:8080/contacts/abc123' \
---header 'Authorization: Bearer <token here>'
-```
-
-Should this request be made with the JWT roles set to `["admin"]` the response will be"
-
-```json
-{ "result": "Contact updated" }
-```
-
-Should this request be made with the JWT roles set to `["user"]` the response will be:
-
-```json
-{ "error": "Unauthorized" }
-```
-
-### Delete a contact
-
-Allowed for `admin` role only
-
-```bash
-curl -X DELETE 'http://localhost:8080/contacts/abc123' \
---header 'Authorization: Bearer <token here>'
-```
-
-Should this request be made with the JWT roles set to `["admin"]` the response will be"
-
-```json
-{ "result": "Contact deleted" }
-```
-
-Should this request be made with the JWT roles set to `["user"]` the response will be:
-
-```json
-{ "error": "Unauthorized" }
-```
+## Resources
+* [Try online with the Cerbos playground](https://play.cerbos.dev)
+* [Explore demo repositories](https://github.com/cerbos)
+* [Read the documentation](https://docs.cerbos.dev)
+* [Subscribe to our newsletter](https://cerbos.dev/subscribe)
+* [Join the community on Slack](http://go.cerbos.io/slack)
