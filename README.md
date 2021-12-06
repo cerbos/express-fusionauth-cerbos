@@ -2,6 +2,8 @@
 
 An example stacj of integrating [Cerbos](https://cerbos.dev) with an [Express](https://expressjs.com/) server using [FusionAuth](https://fusionauth.io) for authentication and user management.
 
+This example is based off the [FusionAuth/fusionauth-example-node](https://github.com/fusionauth/fusionauth-example-node) repo.
+
 ## Dependencies
 
 - docker-compose
@@ -12,16 +14,16 @@ An example stacj of integrating [Cerbos](https://cerbos.dev) with an [Express](h
 
 Start up the stack `docker compose up` - this will take some time to pull down all the images and launch them, but once started the following services will be running.
 
-- FusionAuth [http://localhost:9011](`http://localhost:9011`)
-- Cerbos [http://localhost:3592/](`http://localhost:3592/`)
-- Node App [http://localhost:8080/](`http://localhost:8080/`)
+- FusionAuth [`http://localhost:9011`](http://localhost:9011)
+- Cerbos [`http://localhost:3592/`](http://localhost:3592/)
+- Node App [`http://localhost:8080/`](http://localhost:8080/)
 - Postgres DB for FustionAuth on port `5432`
 
 ### Configure FusionAuth
 
-This example is based off the [https://fusionauth.io/docs/v1/tech/5-minute-setup-guide/](FusionAuth 5 Minute Guide) - and most of the steps have bee handled by the `docker compose` setup.
+This example is based off the [FusionAuth 5 Minute Guide](https://fusionauth.io/docs/v1/tech/5-minute-setup-guide/) - and most of the steps have bee handled by the `docker compose` setup.
 
-The only manual steps required are creating the application. To do this, open up [http://localhost:9011](`http://localhost:9011`) and complete the setup wizard, then:
+The only manual steps required are creating the application. To do this, open up [`http://localhost:9011`](http://localhost:9011) and complete the setup wizard, then:
 
 Once we arrive in the FusionAuth admin UI, the first thing we need to do is create an Application. An Application is something that a user can log into. This is the application we are building or that we are migrating to use FusionAuth. We’ll click the Application menu option on the left side of the page or the Setup button in the box at the top of the page.
 
@@ -56,7 +58,7 @@ Now that our application has been created, we need to add the Client ID and Clie
 
 ### Test the app
 
-Now that everything is wired up you should be able to goto [http://localhost:8080](`http://localhost:8080`) and press the login link to authenticate with your FusionAuth account.
+Now that everything is wired up you should be able to goto [`http://localhost:8080`](http://localhost:8080) and press the login link to authenticate with your FusionAuth account.
 
 ## Policies
 
