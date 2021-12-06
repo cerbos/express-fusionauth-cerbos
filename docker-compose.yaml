@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  cerbos:
+    image: ghcr.io/cerbos/cerbos:0.10.0
+    restart: unless-stopped
+    volumes:
+      - ./cerbos/config:/config
+      - ./cerbos/policies:/policies
+    ports:
+      - "3592:3592"
+
+  db:
+    image: postgres:11.9-alpine
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: password
+    restart: unless-stopped
+    volumes:
+      - ./db/:/var/lib/postgresql/data
+
+  fusionauth:
+    image: fusionauth/fusionauth-app:1.31.0
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/fusionauth
+      DATABASE_ROOT_USERNAME: demo
+      DATABASE_ROOT_PASSWORD: password
+      DATABASE_USERNAME: demo
+      DATABASE_PASSWORD: password
+      FUSIONAUTH_APP_MEMORY: 512M
+      FUSIONAUTH_APP_RUNTIME_MODE: development
+      FUSIONAUTH_APP_URL: http://fusionauth:9011
+      SEARCH_TYPE: database
+    restart: unless-stopped
+    ports:
+      - 9011:9011
+    volumes:
+      - ./fusionauth/:/usr/local/fusionauth/config
+  
+  app:
+    image: node:16.10-alpine
+    depends_on:
+      - fusionauth
+    restart: unless-stopped
+    working_dir: /home/node/app
+    environment:
+      - PORT=8080
+      - CERBOS_HOST=http://cerbos:3592
+      - FUSIONAUTH_HOST=http://fusionauth:9011
+    volumes:
+      - ./app/:/home/node/app
+    ports:
+      - 8080:8080
+    command: "npm run dev"
+    
+      
+networks:
+  db:
+    driver: bridge
