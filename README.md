@@ -1,6 +1,6 @@
 # express-fusionauth-cerbos
 
-An example stacj of integrating [Cerbos](https://cerbos.dev) with an [Express](https://expressjs.com/) server using [FusionAuth](https://fusionauth.io) for authentication and user management.
+An example stack of integrating [Cerbos](https://cerbos.dev) with an [Express](https://expressjs.com/) server using [FusionAuth](https://fusionauth.io) for authentication and user management.
 
 This example is based off the [FusionAuth/fusionauth-example-node](https://github.com/fusionauth/fusionauth-example-node) repo.
 
