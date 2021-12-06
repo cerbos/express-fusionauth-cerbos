@@ -37,7 +37,7 @@ On the Application form, we’ll need to provide a name for our Application (onl
 
 Most of the defaults will work, but we also need to provide these items:
 
-- An authorized redirect URL. This is the route/controller in our application’s backend that will complete the OAuth workflow. This is also known as the 'Backend for Frontend' or BFF pattern, and is a lightweight proxy. In our example, we set this to http://localhost:3000/oauth-redirect. We’ll show some Node.js example code below for this route.
+- An authorized redirect URL. This is the route/controller in our application’s backend that will complete the OAuth workflow. This is also known as the 'Backend for Frontend' or BFF pattern, and is a lightweight proxy. In our example, we set this to `http://localhost:8080/auth/callback`. We’ll show some Node.js example code below for this route.
 
 - Optionally, we can specify a valid Logout URL. This is where the user will be redirected to after they are logged out of FusionAuth’s OAuth front-end: our application.
 
