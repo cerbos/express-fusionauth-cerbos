@@ -4,6 +4,11 @@ An example stack of integrating [Cerbos](https://cerbos.dev) with an [Express](h
 
 This example is based off the [FusionAuth/fusionauth-example-node](https://github.com/fusionauth/fusionauth-example-node) repo.
 
+<a href="https://www.youtube.com/watch?v=Uf1jmDn4YSE"><img src="docs/demo-video.png" height="400"/></a>
+
+[Demo Video](https://www.youtube.com/watch?v=Uf1jmDn4YSE)
+
+
 ## Dependencies
 
 - docker-compose

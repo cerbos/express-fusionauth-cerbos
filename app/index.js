@@ -9,8 +9,8 @@ import path from "path";
 import db from "./db.js";
 
 // Set the Client ID and Client Secret from FusionAuth here:
-const CLIENT_ID = "db29769a-6903-41ce-8af4-6601833a4805";
-const CLIENT_SECRET = "RQkML-ov1efGWIZv3NEAUR47oBcp3dhk3AB8z6G3WoE";
+const CLIENT_ID = "6812f9b7-73c2-4152-b36b-f6c07c88e3d5";
+const CLIENT_SECRET = "y4pcK_rSaEtUlm0dOtA1_s3gPc52nLCOGslqtWtjJSw";
 
 const fusionAuthURL = process.env.FUSIONAUTH_HOST;
 const redirectUrl = `http://localhost:${process.env.PORT}/auth/callback`;
