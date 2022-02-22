@@ -1,5 +1,5 @@
 import express from "express";
-import { Cerbos } from "cerbos";
+import { Cerbos } from "@cerbos/sdk";
 import expressSession from "express-session";
 import cookieParser from "cookie-parser";
 import { FusionAuthClient } from "@fusionauth/typescript-client";
