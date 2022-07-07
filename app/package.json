@@ -1,7 +1,7 @@
 {
-  "name": "express-auth0-cerbos",
+  "name": "express-fusionauth-cerbos",
   "version": "1.0.0",
-  "description": "",
+  "description": "Demo application showing integration between FusionAuth, Cerbos and Express for fine grained permissioning backed by an OAuth token.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
