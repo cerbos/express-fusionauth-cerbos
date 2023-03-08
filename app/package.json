@@ -1,7 +1,7 @@
 {
-  "name": "express-auth0-cerbos",
+  "name": "express-fusionauth-cerbos",
   "version": "1.0.0",
-  "description": "",
+  "description": "Demo application showing integration between FusionAuth, Cerbos and Express for fine grained permissioning backed by an OAuth token.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,14 +14,14 @@
   "dependencies": {
     "@cerbos/sdk": "^0.4.1",
     "@fusionauth/typescript-client": "^1.31.0",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "cookie-parser": "^1.4.6",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-session": "^1.17.2",
     "pkce-challenge": "^2.2.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.20"
   }
 }
